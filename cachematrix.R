@@ -1,4 +1,6 @@
 
+##Sources the script.
+source("cachematrix.R")
 
 ## The script has two functions - makeCacheMatrix and cacheSolve.
 ## makeCacheMatrix: This function creates a special "matrix" object that can cache its inverse.
@@ -82,37 +84,36 @@ cacheSolve <- function(x, ...)
 
 
 ##Creating a square matrix "j".
-## j <- matrix(1:4,2,2 )
-## j
+j <- matrix(1:4,2,2 )
+j
 ##[,1] [,2]
 ##[1,]    1    3
 ##[2,]    2    4
 
-##Sources the script.
-## source("cacheMatrix.R")
+
 
 ##makeCacheMatrix is called, the value list is retuned in "a".
-## a <- makeCacheMatrix()
+a <- makeCacheMatrix()
 
 ## Sets the value of matrix
-## a$set(j)
+a$set(j)
 
 ## Gets the value of matriz
-## a$get()  
+a$get()  
 ##[,1] [,2]
 ##[1,]    1    3
 ##[2,]    2    4
 
 
 ##The inverse of matrix is returned when cacheSolve is called.
-##cacheSolve(a) 
+cacheSolve(a) 
 ##[,1] [,2]
 ##[1,]   -2  1.5
 ##[2,]    1 -0.5
 
 
 ##If cacheSolve is called again for same value of "j", then it returns data from the cache.
-##cacheSolve(a) 
+cacheSolve(a) 
 ##getting cached data 
 ##[,1] [,2]
 ##[1,]   -2  1.5
